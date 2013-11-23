@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="demo" ng-controller="DemoController">
+<head>
+    <title>Floating Label Demo</title>
+    <link rel="stylesheet" type="text/css" href="floating-label.css">
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        input, button {
+            padding: 8px 14px;
+            box-shadow: none;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            width: 220px;
+        }
+
+        button {
+            background: #2980b9;
+            color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            width: auto;
+        }
+
+        form {
+            width: 400px;
+            margin: 100px auto;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group .floating-label {
+            margin-top: -20px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <form>
+        <div class="control-group">
+            <input type="text" placeholder="Email address" floating-label />
+        </div>
+
+        <div class="control-group">
+            <input type="password" placeholder="Password" floating-label />
+        </div>
+
+        <div class="control-group">
+            <button type="submit">Log in</button>
+        </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+
+    <script>
+        angular.module('components', []);
+        angular.module('demo', ['components']);
+        angular.module('demo').controller('DemoController', function () {});
+    </script>
+
+    <script src="../floating-label.directive.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.floating-label {
+  position: relative;
+  padding-top: 20px;
+}
+.floating-label label {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 11px;
+  -moz-transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  -moz-transition: -moz-transform 0.15s ease-in;
+  -o-transition: -o-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+}
+.floating-label label.active {
+  -moz-transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.floating-label input {
+  position: relative;
+}
