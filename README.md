@@ -1,3 +1,7 @@
+[![GitHub version](https://badge.fury.io/gh/klaascuvelier%2Fangular-angular-floating-label.svg)](http://badge.fury.io/gh/klaascuvelier%2Fangular-floating-label)
+[![Bower version](https://badge.fury.io/bo/angular-floating-label.svg)](http://badge.fury.io/bo/angular-floating-label)
+[![NPM version](https://badge.fury.io/js/angular-floating-label.svg)](http://badge.fury.io/js/angular-floating-label)
+
 angular-floating-label
 ======================
 
