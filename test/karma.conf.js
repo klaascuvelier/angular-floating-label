@@ -17,7 +17,8 @@ module.exports = function (config) {
             'bower_components/angular-mocks/angular-mocks.js',
 
             //'src/float-label.module.js',
-            'src/**.js',
+            'src/**/*.module.js',
+            'src/**/*.js',
 
             'test/spec/**/*'
         ],
