@@ -2,7 +2,7 @@
 <html ng-app="demo" ng-controller="DemoController">
 <head>
     <title>Floating Label Demo</title>
-    <link rel="stylesheet" type="text/css" href="floating-label.css">
+    <link rel="stylesheet" type="text/css" href="../dist/floating-label.css">
     <style>
         body {
             font-family: sans-serif;
@@ -54,14 +54,13 @@
         </div>
     </form>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../dist/floating-label.js"></script>
 
     <script>
-        angular.module('components', []);
         angular.module('demo', ['components']);
         angular.module('demo').controller('DemoController', function () {});
     </script>
 
-    <script src="../floating-label.directive.js"></script>
 </body>
 </html>
