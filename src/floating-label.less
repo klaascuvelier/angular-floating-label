@@ -1,0 +1,23 @@
+.floating-label {
+    position: relative;
+    padding-top: 20px;
+
+    label {
+        position: absolute;
+
+        top: 5px;
+        left: 10px;
+        font-size: 11px;
+
+        transform: translateY(20px);
+        transition: transform 0.15s ease-in;
+
+        &.active {
+            transform: translateY(0px);
+        }
+    }
+
+    input {
+        position: relative;
+    }
+}

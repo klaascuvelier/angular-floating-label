@@ -1,0 +1,22 @@
+{
+  "name": "angular-floating-label",
+  "version": "1.0.0",
+  "homepage": "https://github.com/klaascuvelier/angular-floating-label",
+  "authors": [
+    "Klaas Cuvelier <cuvelierklaas@gmail.com>"
+  ],
+  "description": "Floating label directive for AngularJs",
+  "main": "dist/floating-label.js",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "floating",
+    "label",
+    "directive"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "1.3.x",
+    "angular-mocks": "1.3.x"
+  }
+}

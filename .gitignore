@@ -1,0 +1,29 @@
+# Editor
+.DS_Store
+.idea
+.project
+.buildpath
+.settings
+nbproject
+*.sublime-project
+*.sublime-workspace
+
+
+# Dev dependencies
+lib
+node_modules
+bower_components
+npm-debug.log
+
+config.js
+.tmp
+client.zip
+
+# Test output
+test/test-results.xml
+test/coverage
+
+# conflict resolvers
+app/build
+app/vendor
+
