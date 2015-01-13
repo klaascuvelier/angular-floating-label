@@ -2,6 +2,9 @@
 [![Bower version](https://badge.fury.io/bo/angular-floating-label.svg)](http://badge.fury.io/bo/angular-floating-label)
 [![NPM version](https://badge.fury.io/js/angular-floating-label.svg)](http://badge.fury.io/js/angular-floating-label)
 
+[![Build Status](https://travis-ci.org/klaascuvelier/angular-floating-label.svg)](https://travis-ci.org/klaascuvelier/angular-floating-label)
+
+
 angular-floating-label
 ======================
 
