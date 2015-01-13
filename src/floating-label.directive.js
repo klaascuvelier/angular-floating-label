@@ -18,6 +18,10 @@
         var inputId = inputBox.attr('id') || '',
             inputName = inputBox.attr('name') || '';
 
+        if (inputId.length === 0 && inputName.length === 0) {
+            throw 'If no ng-model is defined, the input should have an id or a name';
+        }
+
         return 'input_' + (inputId ? inputId : inputName);
     }
 
@@ -28,7 +32,7 @@
 
         // if there is no placeholder, there is no use for this directive
         if (!$attrs.placeholder) {
-            return;
+            throw 'Floating label needs a placeholder';
         }
 
         // copy existing attributes from
@@ -68,6 +72,8 @@
     {
         var inputBox = $element.find('input'),
             ngModelKey = inputBox.attr('ng-model');
+
+        $scope.showLabel = false;
 
         $scope.$watch(ngModelKey, function (newValue) {
             // if the field is not empty, show the label, otherwise hide it
