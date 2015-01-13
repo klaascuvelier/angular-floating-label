@@ -27,7 +27,7 @@ module.exports = function (config) {
         exclude: [],
 
         preprocessors: {
-            'app/components/**/src/**/*.js': ['coverage']
+            'src/**/*.js': ['coverage']
         },
 
         // Which plugins to enable
