@@ -42,11 +42,11 @@
 
                         // copy existing attributes from
                         for (attr in $attrs) {
-                            if ($attrs.hasOwnProperty(attr) && attr.substr(0, 1) !== '$') {
-                                templateAttributes.push(attr + '="' + $attrs[attr] + '"');
+                            if ($attrs.hasOwnProperty(attr) && attr.substr(0, 1) !== '$' && attr !== 'floatingLabel') {
+                                templateAttributes.push($attrs.$attr[attr] + '="' + $attrs[attr] + '"');
                             }
                         }
-
+                        
                         // if there wasn't a ngModel binded to input, generate a key for the ngModel and add it
                         if (!$attrs.ngModel) {
                             templateAttributes.push('ng-model="' + generateNgModelKey($element) + '"')
