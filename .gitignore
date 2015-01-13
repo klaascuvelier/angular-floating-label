@@ -17,8 +17,6 @@ npm-debug.log
 
 config.js
 .tmp
-dist
-dist/*
 client.zip
 
 # Test output
