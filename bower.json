@@ -14,5 +14,9 @@
     "label",
     "directive"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "1.3.x",
+    "angular-mocks": "1.3.x"
+  }
 }
