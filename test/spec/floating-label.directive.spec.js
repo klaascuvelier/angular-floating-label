@@ -135,4 +135,42 @@ describe('floating-label directive', function () {
         expect(directiveScope.showLabel).toBeFalsy();
     });
 
+    it('should add a class on the label when showLabel is true', function () {
+        var element = angular.element('<div><div ng-model="test" floating-label placeholder="test"></div></div>');
+        var input;
+        var label;
+        var directiveScope;
+
+        $compile(element)($scope);
+        $scope.$digest();
+
+        input = element[0].querySelector('input');
+        directiveScope = angular.element(input).scope();
+        directiveScope.showLabel = true;
+        directiveScope.$digest();
+
+        label = element[0].querySelector('label');
+
+        expect(label.className.indexOf('active')).toBeGreaterThan(-1);
+    });
+
+    it('should remove the class on the label when showLabel is true', function () {
+        var element = angular.element('<div><div ng-model="test" floating-label placeholder="test"></div></div>');
+        var input;
+        var label;
+        var directiveScope;
+
+        $compile(element)($scope);
+        $scope.$digest();
+
+        input = element[0].querySelector('input');
+        directiveScope = angular.element(input).scope();
+        directiveScope.showLabel = false;
+        directiveScope.$digest();
+
+        label = element[0].querySelector('label');
+
+        expect(label.className.indexOf('active')).toEqual(-1);
+    });
+
 });
