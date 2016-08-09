@@ -77,7 +77,7 @@
 
         $scope.$watch(ngModelKey, function (newValue) {
             // if the field is not empty, show the label, otherwise hide it
-            $scope.showLabel = newValue && newValue.length > 0;
+            $scope.showLabel = newValue && newValue.toString().length > 0;
         });
     }
 
