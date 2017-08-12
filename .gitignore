@@ -20,7 +20,7 @@ config.js
 client.zip
 
 # Test output
-test/test-results.xml
+test/junit
 test/coverage
 
 # conflict resolvers

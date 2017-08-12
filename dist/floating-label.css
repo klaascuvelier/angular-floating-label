@@ -8,14 +8,14 @@
   left: 10px;
   font-size: 11px;
   -webkit-transform: translateY(20px);
-      -ms-transform: translateY(20px);
           transform: translateY(20px);
+  -webkit-transition: -webkit-transform 0.15s ease-in;
   transition: -webkit-transform 0.15s ease-in;
   transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
 }
 .floating-label label.active {
   -webkit-transform: translateY(0px);
-      -ms-transform: translateY(0px);
           transform: translateY(0px);
 }
 .floating-label input {
