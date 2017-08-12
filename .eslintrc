@@ -1,0 +1,10 @@
+{
+    "extends": "./node_modules/js-styleguide/.eslintrc",
+    "rules": {
+        "strict": [1, "function"],
+        "no-magic-numbers": "off",
+        "complexity": ["warn", {"max": 6}],
+        "prefer-template": "off",
+        "prefer-const": "off"
+    }
+}

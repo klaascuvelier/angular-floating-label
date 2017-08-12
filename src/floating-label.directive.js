@@ -6,33 +6,40 @@
 // By @klaascuvelier (http://www.klaascuvelier.be)
 //
 //
-(function (angular) {
+(function initDirective (angular) {
     'use strict';
 
     /**
      * generate an NgModel key for the input box using it's attributes (id/name)
      * @param {angular.element} inputBox
-     * @return {string}
+     * @returns {string}
      */
-    function generateNgModelKey(inputBox) {
-        var inputId = inputBox.attr('id') || '',
-            inputName = inputBox.attr('name') || '';
+    function generateNgModelKey (inputBox) {
+        var inputId = inputBox.attr('id') || '';
+        var inputName = inputBox.attr('name') || '';
 
         if (inputId.length === 0 && inputName.length === 0) {
-            throw 'If no ng-model is defined, the input should have an id or a name';
+            throw new Error('If no ng-model is defined, the input should have an id or a name');
         }
 
-        return 'input_' + (inputId ? inputId : inputName);
+        return 'input_' + inputId || inputName;
     }
 
+    /**
+     * Angular compile method
+     * @param {angular.element} $element
+     * @param {angular.attrs} $attrs
+     * @returns {object}
+     */
     function floatingLabelCompileFunction ($element, $attrs)
     {
-        var templateAttributes = [],
-            template, attr;
+        var templateAttributes = [];
+        var template = null;
+        var attr = null;
 
         // if there is no placeholder, there is no use for this directive
         if (!$attrs.placeholder) {
-            throw 'Floating label needs a placeholder';
+            throw new Error('Floating label needs a placeholder');
         }
 
         // copy existing attributes from
@@ -49,7 +56,7 @@
 
         // html template for the directive
         template = '<div class="floating-label">' +
-                '<label ng-class="{ \'active\': showLabel }">' + $attrs.placeholder + '</label>'+
+                '<label ng-class="{ \'active\': showLabel }">' + $attrs.placeholder + '</label>' +
                 '<input ' + templateAttributes.join(' ') + ' />' +
             '</div>';
 
@@ -61,34 +68,34 @@
     }
 
     // Add DI
-    floatingLabelCompileFunction.$inject = ['$element', '$attrs'];
+    floatingLabelCompileFunction.$inject = [ '$element', '$attrs' ];
 
     /**
      * Post compile method
-     * @param $scope
-     * @param $element
+     * @param {angular.scope} $scope
+     * @param {angular.element} $element
      */
     function floatingLabelPostCompileFunction ($scope, $element)
     {
-        var inputBox = $element.find('input'),
-            ngModelKey = inputBox.attr('ng-model');
+        var inputBox = $element.find('input');
+        var ngModelKey = inputBox.attr('ng-model');
 
         $scope.showLabel = false;
 
-        $scope.$watch(ngModelKey, function (newValue) {
+        $scope.$watch(ngModelKey, function modelKeyWatcher (newValue) {
             // if the field is not empty, show the label, otherwise hide it
             $scope.showLabel = typeof newValue === 'string' && newValue.length > 0;
         });
     }
 
     // Add DI
-    floatingLabelPostCompileFunction.$inject = ['$scope', '$element'];
+    floatingLabelPostCompileFunction.$inject = [ '$scope', '$element' ];
 
     /**
      * Return the definition for this directive
      * @returns {Object}
      */
-    function floatingLabelDefinition() {
+    function floatingLabelDefinition () {
 
         return {
             restrict: 'A',
