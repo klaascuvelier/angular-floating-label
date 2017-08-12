@@ -1,17 +1,15 @@
 'use strict';
 
-var gulp    = require('gulp');
-var karma   = require('karma').server;
-var jshint  = require('gulp-jshint');
-var stylish = require('jshint-stylish');
+var gulp = require('gulp');
+var karma = require('karma').server;
+var eslint = require('gulp-eslint');
 
 /**
  * Create function that will run karma on the source files
  * @param configFile
  * @returns {Function}
  */
-function karmaTask(configFile)
-{
+function karmaTask(configFile) {
     return function (done) {
         karma.start({
             configFile: configFile,
@@ -25,19 +23,18 @@ function karmaTask(configFile)
  * @param sources
  * @returns {Function}
  */
-function jsHintTask(sources)
-{
+function lintTask(sources) {
     return function () {
         return gulp
             .src(sources)
-            .pipe(jshint())
-            .pipe(jshint.reporter(stylish))
-            .pipe(jshint.reporter('fail'));
+            .pipe(eslint())
+            .pipe(eslint.format())
+            .pipe(eslint.failAfterError());
     };
 }
 
 // Export methods
 module.exports = {
     karmaTask: karmaTask,
-    jsHintTask: jsHintTask
+    lintTask: lintTask
 };

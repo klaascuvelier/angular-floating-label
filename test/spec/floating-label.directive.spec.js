@@ -19,7 +19,7 @@ describe('floating-label directive', function () {
         expect(function () {
             $compile(element)($scope);
             $scope.$digest();
-        }).toThrow('Floating label needs a placeholder');
+        }).toThrow(new Error('Floating label needs a placeholder'));
 
     });
 
@@ -40,7 +40,7 @@ describe('floating-label directive', function () {
         expect(function () {
             $compile(element)($scope);
             $scope.$digest();
-        }).toThrow('If no ng-model is defined, the input should have an id or a name');
+        }).toThrow(new Error('If no ng-model is defined, the input should have an id or a name'));
 
 
         element = angular.element('<div><div id="test" floating-label placeholder="test"></div></div>');
