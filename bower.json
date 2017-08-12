@@ -1,6 +1,6 @@
 {
   "name": "angular-floating-label",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/klaascuvelier/angular-floating-label",
   "authors": [
     "Klaas Cuvelier <cuvelierklaas@gmail.com>"
@@ -16,7 +16,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "angular": "1.3.x",
-    "angular-mocks": "1.3.x"
+    "angular": "^1.3.0",
+    "angular-mocks": "^1.3.0"
   }
 }
