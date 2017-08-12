@@ -5,6 +5,7 @@
         "no-magic-numbers": "off",
         "complexity": ["warn", {"max": 6}],
         "prefer-template": "off",
-        "prefer-const": "off"
+        "prefer-const": "off",
+        "no-undefined": "off"
     }
 }
