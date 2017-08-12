@@ -102,6 +102,22 @@ describe('floating-label directive', function () {
         expect(directiveScope.$id).not.toEqual($scope.$id);
     });
 
+    it('should handle numeric values', function () {
+        var element = angular.element('<div><div ng-model="test" floating-label placeholder="test"></div></div>');
+        var input;
+        var directiveScope;
+
+        $compile(element)($scope);
+        $scope.$digest();
+
+        input = element[0].querySelector('input');
+        directiveScope = angular.element(input).scope();
+        directiveScope.test = 0;
+        $scope.$digest();
+
+        expect(directiveScope.showLabel).toBeTruthy();
+    });
+
     it('should set the value of showLabel to true when the model is filled in', function () {
 
         var element = angular.element('<div><div ng-model="test" floating-label placeholder="test"></div></div>');
