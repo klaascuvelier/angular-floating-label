@@ -1,5 +1,5 @@
 
-## 1.0.1
+## 1.0.1 + 1.0.2
 * Update environment
 * Fix for numerical values #5 (thanks @ablamunits)
 
