@@ -1,5 +1,4 @@
 [![GitHub version](https://badge.fury.io/gh/klaascuvelier%2Fangular-angular-floating-label.svg)](http://badge.fury.io/gh/klaascuvelier%2Fangular-floating-label)
-[![Bower version](https://badge.fury.io/bo/angular-floating-label.svg)](http://badge.fury.io/bo/angular-floating-label)
 [![NPM version](https://badge.fury.io/js/angular-floating-label.svg)](http://badge.fury.io/js/angular-floating-label)
 
 [![Build Status](https://travis-ci.org/klaascuvelier/angular-floating-label.svg)](https://travis-ci.org/klaascuvelier/angular-floating-label)
@@ -39,8 +38,8 @@ Optionally you can specify an `ng-model`, if you don't specify it, you are requi
            </form>
    
    
-            <script src="bower_components/angular/angular.js"></script>
-            <script src="bower_components/angular-floating-label/dist/floating-label.js"></script>
+            <script src="node_modules/angular/angular.js"></script>
+            <script src="node_modules/angular-floating-label/dist/floating-label.js"></script>
     
             <script>
                 angular.module('demo', ['components']);
