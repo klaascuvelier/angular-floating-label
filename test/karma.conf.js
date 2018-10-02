@@ -13,8 +13,8 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'bower_components/angular/angular.js',
-            'bower_components/angular-mocks/angular-mocks.js',
+            'node_modules/angular/angular.js',
+            'node_modules/angular-mocks/angular-mocks.js',
 
             //'src/float-label.module.js',
             'src/**/*.module.js',
@@ -32,7 +32,7 @@ module.exports = function (config) {
 
         // Which plugins to enable
         plugins: [
-            'karma-phantomjs-launcher',
+            'karma-chrome-launcher',
             'karma-jasmine',
             'karma-coverage',
             'karma-junit-reporter'
@@ -83,7 +83,7 @@ module.exports = function (config) {
         // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
         // - PhantomJS
         // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-        browsers: ['PhantomJS'],
+        browsers: ['ChromeHeadless'],
 
 
         // If browser does not capture in given timeout [ms], kill it

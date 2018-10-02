@@ -21,13 +21,16 @@ gulp.task('lint', gulpTest.lintTask(config.paths.jsSources));
 
 gulp.task('karma', gulpTest.karmaTask(config.paths.karmaConfigFile));
 
-gulp.task('test', ['lint', 'karma']);
+gulp.task('test', gulp.series('lint', 'karma'));
 
-gulp.task('scripts', ['test'], gulpBuild.scriptsTask(
-    config.paths.jsSources,
-    config.paths.jsOutputFile,
-    config.paths.dist
-));
+gulp.task('scripts', gulp.series(
+        'test', 
+        gulpBuild.scriptsTask(
+            config.paths.jsSources,
+            config.paths.jsOutputFile,
+            config.paths.dist
+        )
+    ));
 
 gulp.task('styles', gulpBuild.stylesTask(
     config.paths.lessSources,
@@ -35,6 +38,6 @@ gulp.task('styles', gulpBuild.stylesTask(
     config.paths.dist
 ));
 
-gulp.task('build', ['test', 'styles', 'scripts']);
+gulp.task('build', gulp.series('test', 'styles', 'scripts'));
 
-gulp.task('default', ['build']);
+gulp.task('default', gulp.series('build'));
