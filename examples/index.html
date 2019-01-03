@@ -40,13 +40,18 @@
 
 </head>
 <body>
-    <form>
+    <form name="form">
         <div class="control-group">
             <input type="text" placeholder="Email address" floating-label ng-model="email" />
         </div>
 
         <div class="control-group">
             <input type="password" placeholder="Password" floating-label ng-model="password" />
+        </div>
+
+        <div class="control-group">
+            <input type="text" placeholder="max 5 digits" floating-label ng-model="digits" name="digits" ng-pattern="regex" /><br />
+            Input valid: {{form.digits.$valid}}
         </div>
 
         <div class="control-group">
@@ -59,7 +64,9 @@
 
     <script>
         angular.module('demo', ['components']);
-        angular.module('demo').controller('DemoController', function () {});
+        angular.module('demo').controller('DemoController', ['$scope', function ($scope) {
+            $scope.regex = '^\\d{0,5}$'
+        }]);
     </script>
 
 </body>
