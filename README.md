@@ -3,6 +3,12 @@
 
 [![Build Status](https://travis-ci.org/klaascuvelier/angular-floating-label.svg)](https://travis-ci.org/klaascuvelier/angular-floating-label)
 
+# Deprecation notice
+
+As I am no longer working on any AngularJS projects and don't have the time to give this repo the attention it deserves, I will no longer maintain this lib. 
+Feel free to keep using it, fork it, improve it, but I will not offer any support anymore.
+
+
 
 angular-floating-label
 ======================
